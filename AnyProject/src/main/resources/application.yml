@@ -1,4 +1,15 @@
 security:
   user:
-    name: user
+    shortName: user
     password: Passw0rd
+
+spring:
+  datasource:
+    platform: h2
+    username: sa
+    password:
+    url: jdbc:h2:~/test
+    driver-class-shortName: org.h2.Driver
+
+rs:
+  key: value-aaa
