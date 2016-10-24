@@ -4,12 +4,12 @@ security:
     password: Passw0rd
 
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
   datasource:
-    platform: h2
     username: sa
     password:
     url: jdbc:h2:~/test
     driver-class-shortName: org.h2.Driver
 
-rs:
-  key: value-aaa

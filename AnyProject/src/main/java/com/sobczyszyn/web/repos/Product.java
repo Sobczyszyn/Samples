@@ -1,22 +1,29 @@
 package com.sobczyszyn.web.repos;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     public Product() {
     }
 
     private String shortName;
-    private String desctiption;
+    private String description;
 
-    public Product(int id, String name) {
-        this.id = id;
+    public Product(String name) {
         this.shortName = name;
+    }
+
+    public Product(String name, String description) {
+        this.shortName = name;
+        this.description = description;
     }
 
     public long getId() {
@@ -35,16 +42,16 @@ public class Product {
         this.shortName = shortName;
     }
 
-    public String getDesctiption() {
-        return desctiption;
+    public String getDescription() {
+        return description;
     }
 
     public Product withDescription(String description) {
-        setDesctiption(description);
+        setDescription(description);
         return this;
     }
 
-    public void setDesctiption(String desctiption) {
-        this.desctiption = desctiption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

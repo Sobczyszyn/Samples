@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
@@ -20,11 +18,11 @@ public class Products {
     @Autowired
     private SimpleProductRepository products;
 
-    @PostConstruct
-    public void logProp() {
-        products.saveAndFlush(new Product(1,"nam1").withDescription("description of product A") );
-        products.saveAndFlush(new Product(2,"nam2").withDescription("description of product B") );
-    }
+    //@PostConstruct
+//    public void init() {
+//        products.saveAndFlush(new Product("nam1").withDescription("description of product A"));
+//        products.saveAndFlush(new Product("nam2").withDescription("description of product B"));
+//    }
 
     @RequestMapping(method = GET)
     public List<Product> getAll() {
