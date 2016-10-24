@@ -18,12 +18,6 @@ public class Products {
     @Autowired
     private SimpleProductRepository products;
 
-    //@PostConstruct
-//    public void init() {
-//        products.saveAndFlush(new Product("nam1").withDescription("description of product A"));
-//        products.saveAndFlush(new Product("nam2").withDescription("description of product B"));
-//    }
-
     @RequestMapping(method = GET)
     public List<Product> getAll() {
         return products.findAll();
